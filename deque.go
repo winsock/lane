@@ -146,3 +146,9 @@ func (s *Deque) Full() bool {
 
 	return s.capacity >= 0 && s.container.Len() >= s.capacity
 }
+
+// Returns underlying container for you to do you awful hackjob
+// Proper synchronization is on you in this case
+func (s *Deque) Container() *list.List {
+	return s.container
+}
